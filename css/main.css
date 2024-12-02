@@ -1,0 +1,146 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background: #fff;
+  -webkit-box-shadow: 0px 8px 7px 0px rgba(66, 68, 90, 0.5);
+  -moz-box-shadow: 0px 8px 7px 0px rgba(66, 68, 90, 0.5);
+  box-shadow: 0px 8px 7px 0px rgba(66, 68, 90, 0.5);
+}
+
+h2.section__heading {
+  position: relative;
+  font-weight: 400;
+}
+
+h2.section__heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -32px;
+  transform: translateX(-50%);
+  height: 1px;
+  width: 126px;
+  background-color: #111;
+}
+
+.buy-now-btn {
+  background: #30ab4c;
+  padding: 10px 40px;
+  max-width: 171px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.buy-now-btn-2 {
+  background: #ad4844;
+  padding: 10px 40px;
+  max-width: 171px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.cards__container {
+  padding: 48px;
+}
+
+.card {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.card:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card > h3 {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.card > h3::after {
+  content: "";
+  position: absolute;
+  width: 126px;
+  height: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -32px;
+  background: #111;
+}
+
+.card > * {
+  max-width: 290px;
+}
+
+.card__number {
+  -webkit-box-shadow: 1px 8px 27px -10px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 1px 8px 27px -10px rgba(66, 68, 90, 1);
+  box-shadow: 1px 8px 27px -10px rgba(66, 68, 90, 1);
+  font-weight: 700;
+  width: 46px;
+  height: 46px;
+  margin-right: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.card__heading {
+  position: relative;
+}
+
+.card__heading::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -32px;
+  background: #111;
+}
+
+.card__circle--gray {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #d9d9d9;
+}
