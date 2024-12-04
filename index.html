@@ -10,134 +10,52 @@
     />
     <title>ARTHROHARD</title>
   </head>
-  <body style="background-color: #f1f1f1">
-    <header
-      style="
-        height: 122px;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1;
-        background-color: #f1f1f1;
-      "
-    >
-      <div
-        style="
-          height: 100%;
-          max-width: 1546px;
-          margin-inline: auto;
-          display: flex;
-          align-items: center;
-          padding-inline: 20px;
-        "
-      >
-        <a href="/" style="flex: 1">
-          <img src="img/logo.svg" alt="" style="width: 239px" />
+  <body>
+    <header>
+      <div>
+        <a href="/">
+          <img src="img/logo.svg" alt="ARTHROHARD" />
         </a>
-        <ul style="flex: 2; display: flex; gap: 64px">
-          <li><a href="" style="font-size: 16px">CO NAS WYRÓŻNIA</a></li>
-          <li><a href="" style="font-size: 16px">SKŁAD</a></li>
-          <li><a href="" style="font-size: 16px">PRODUKTY</a></li>
+        <ul>
+          <li><a href="">CO NAS WYRÓŻNIA</a></li>
+          <li><a href="">SKŁAD</a></li>
+          <li><a href="">PRODUKTY</a></li>
         </ul>
       </div>
     </header>
-    <section style="height: 100vh">
-      <div
-        style="
-          height: 100%;
-          padding-top: 122px;
-          display: flex;
-          flex-direction: column;
-          max-width: 1546px;
-          margin-inline: auto;
-        "
-      >
-        <div style="flex: 1; display: flex">
-          <div style="position: relative; flex: 1">
-            <img
-              src="img/bottles.png"
-              alt=""
-              style="width: 673px; height: 867px; object-fit: cover"
-            />
+    <section class="section--hero">
+      <div>
+        <div class="section--top">
+          <div>
+            <img src="img/bottles.png" alt="" />
           </div>
-          <div
-            style="
-              display: flex;
-              flex: 1;
-              flex-direction: column;
-              justify-content: center;
-            "
-          >
+          <div>
             <img src="/img/logo.svg" style="width: 100%; margin-bottom: 50px" />
-            <h2
-              style="
-                margin-bottom: 20px;
-                font-size: 48px;
-                font-weight: 500;
-                line-height: 61px;
-                background: linear-gradient(135deg, #111, #b1b1b1);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-              "
-            >
+            <h2>
               Lab-V Arthrohard Preparat<br />
               na wsparcie stawów dla psa i kota
             </h2>
-            <h3
-              style="
-                font-size: 20px;
-                line-height: 25px;
-                font-weight: 400;
-                margin-bottom: 20px;
-              "
-            >
+            <h3>
               Arthrohard to dobrze przyswajalny suplement diety w formie syropu,
               <br />
               stworzony z myślą o zdrowiu stawów Twojego psa lub kota.
             </h3>
-            <a href="#" class="buy-now-btn">Kup teraz</a>
+            <a href="#" class="btn btn--green">Kup teraz</a>
           </div>
         </div>
-        <div style="flex: 1">
-          <h2
-            style="
-              color: #111;
-              background: linear-gradient(135deg, #111, #b1b1b1);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-              text-align: center;
-              font-size: 48px;
-            "
-            class="section__heading"
-          >
-            Co wyróżnia nasz preparat
-          </h2>
+        <div class="section--bottom">
+          <h2 class="section__heading">Co wyróżnia nasz preparat</h2>
         </div>
       </div>
     </section>
-    <section style="padding-bottom: 32px">
-      <div
-        style="
-          display: flex;
-          max-width: 1546px;
-          margin-inline: auto;
-          justify-content: space-between;
-        "
-        class="cards__container"
-      >
+    <section class="section--product-features">
+      <div class="cards__container">
         <div class="card">
-          <h3
-            style="
-              font-size: 30px;
-              white-space: nowrap;
-              line-height: 39px;
-              font-weight: 400;
-            "
-          >
-            Innowacyjny dodatek -<br />
-            Czarciego Pazura
+          <h3 class="card__heading">
+            <span>Innowacyjny dodatek -</span>
+            <span>Czarciego Pazura</span>
           </h3>
-          <p style="line-height: 25px">
+          <p>
             Zapewnia dodatkowe wsparcie w zwalczaniu stanów bólowych i
             zapalnych. Skoncentrowane składniki aktywne, opracowane we
             współpracy z lekarzami weterynarii, przynoszą szybkie i zauważalne
@@ -147,11 +65,13 @@
           <img src="img/flower.png" alt="" />
         </div>
         <div class="card">
-          <h3 style="font-size: 30px; line-height: 39px; font-weight: 400">
-            Wygoda -<br />
-            dwa sposoby podawania
+          <h3 class="card__heading">
+            <span>Wygoda -</span>
+            <span>dwa sposoby podawania</span>
           </h3>
-          <div>
+          <div
+            style="display: flex; flex-direction: column; align-items: start"
+          >
             <div
               style="
                 display: flex;
@@ -171,7 +91,7 @@
               "
             >
               <div class="card__number">2</div>
-              <div>Zmieszany z karmą</div>
+              <div class="">Zmieszany z karmą</div>
             </div>
           </div>
           <div>
@@ -180,8 +100,8 @@
           </div>
         </div>
         <div class="card">
-          <h3 style="font-size: 31px; line-height: 39px; font-weight: 400">
-            Skuteczność - <br />skoncentrowana dawka
+          <h3 class="card__heading">
+            <span>Skuteczność -</span><span>skoncentrowana dawka</span>
           </h3>
           <p style="line-height: 25px">
             <strong>Tylko jedna porcja dziennie.</strong><br />
@@ -248,7 +168,7 @@
                 Siarczan glukozaminy
               </h4>
               <span style="font-size: 20px; margin-top: 24px">650 mg</span>
-              <p style="max-width: 120%; text-align: center">
+              <p style="max-width: 100%; text-align: center">
                 Glukozamina jest naturalnym składnikiem chrząstki. Dodatek
                 glukozaminy przyczynia się do zwiększenia produkcji
                 glikozaminoglikanów (m.in. siarczanu keratanu, heparanu, kwasu
@@ -271,16 +191,14 @@
               <h4
                 class="card__heading text-align: center; margin-top: 128px; font-size: 31px; line-height: 39px;"
               >
-                Siarczan glukozaminy
+                Siarczan chondroityny
               </h4>
               <span style="font-size: 20px; margin-top: 24px">650 mg</span>
               <p style="text-align: center">
-                Glukozamina jest naturalnym składnikiem chrząstki. Dodatek
-                glukozaminy przyczynia się do zwiększenia produkcji
-                glikozaminoglikanów (m.in. siarczanu keratanu, heparanu, kwasu
-                hialuronowego), które pomagają w odbudowie chrząstki, co jest
-                szczególnie korzystne dla zwierząt ze zmianami zwyrodnieniowymi
-                stawów.
+                Chondroityna, podobnie jak glukozamina, jest składnikiem
+                chrząstki. Chondroityna pomaga zwalczać enzymy, które niszczą
+                chrząstkę, a także pomaga chrząstce zatrzymać wodę, co jest
+                ważne dla jej sprężystości i absorpcji wstrząsów.
               </p>
             </div>
             <div
@@ -297,16 +215,14 @@
               <h4
                 class="card__heading text-align: center; margin-top: 128px; font-size: 31px; line-height: 39px;"
               >
-                Siarczan glukozaminy
+                Kwas hialuronowy
               </h4>
               <span style="font-size: 20px; margin-top: 24px">650 mg</span>
               <p style="text-align: center">
-                Glukozamina jest naturalnym składnikiem chrząstki. Dodatek
-                glukozaminy przyczynia się do zwiększenia produkcji
-                glikozaminoglikanów (m.in. siarczanu keratanu, heparanu, kwasu
-                hialuronowego), które pomagają w odbudowie chrząstki, co jest
-                szczególnie korzystne dla zwierząt ze zmianami zwyrodnieniowymi
-                stawów.
+                Kwas hialuronowy jest kluczowym składnikiem płynu stawowego,
+                który działa jak smar i amortyzator dla stawów. Suplementacja
+                kwasem hialuronowym może pomóc w utrzymaniu prawidłowej
+                objętości i konsystencji płynu stawowego.
               </p>
             </div>
           </div>
@@ -322,7 +238,7 @@
               src="img/bottle-big.png"
               style="height: 70%; object-fit: contain"
             />
-            <a href="#" class="buy-now-btn-2">Kup teraz</a>
+            <a href="#" class="btn btn--brown">Kup teraz</a>
           </div>
           <div>
             <div
@@ -339,16 +255,13 @@
               <h4
                 class="card__heading text-align: center; margin-top: 128px; font-size: 31px; line-height: 39px;"
               >
-                Siarczan glukozaminy
+                Czarci pazur
               </h4>
               <span style="font-size: 20px; margin-top: 24px">650 mg</span>
               <p style="text-align: center">
-                Glukozamina jest naturalnym składnikiem chrząstki. Dodatek
-                glukozaminy przyczynia się do zwiększenia produkcji
-                glikozaminoglikanów (m.in. siarczanu keratanu, heparanu, kwasu
-                hialuronowego), które pomagają w odbudowie chrząstki, co jest
-                szczególnie korzystne dla zwierząt ze zmianami zwyrodnieniowymi
-                stawów.
+                Czarci pazur jest rośliną, która ma właściwości przeciwzapalne i
+                przeciwbólowe. Może to pomóc zwierzętom, które doświadczają bólu
+                i stanu zapalnego związanego z problemami ze stawami.
               </p>
             </div>
             <div
@@ -365,16 +278,14 @@
               <h4
                 class="card__heading text-align: center; margin-top: 128px; font-size: 31px; line-height: 39px;"
               >
-                Siarczan glukozaminy
+                Witamina C
               </h4>
               <span style="font-size: 20px; margin-top: 24px">650 mg</span>
               <p style="text-align: center">
-                Glukozamina jest naturalnym składnikiem chrząstki. Dodatek
-                glukozaminy przyczynia się do zwiększenia produkcji
-                glikozaminoglikanów (m.in. siarczanu keratanu, heparanu, kwasu
-                hialuronowego), które pomagają w odbudowie chrząstki, co jest
-                szczególnie korzystne dla zwierząt ze zmianami zwyrodnieniowymi
-                stawów.
+                Witamina C jest potężnym przeciwutleniaczem, który może pomóc w
+                ochronie stawów poprzez neutralizację wolnych rodników, które
+                mogą uszkadzać chrząstkę. Ponadto, witamina C odgrywa ważną rolę
+                w produkcji kolagenu, kluczowego składnika chrząstki.
               </p>
             </div>
             <div
@@ -391,16 +302,14 @@
               <h4
                 class="card__heading text-align: center; margin-top: 128px; font-size: 31px; line-height: 39px;"
               >
-                Siarczan glukozaminy
+                MSM
               </h4>
               <span style="font-size: 20px; margin-top: 24px">650 mg</span>
               <p style="text-align: center">
-                Glukozamina jest naturalnym składnikiem chrząstki. Dodatek
-                glukozaminy przyczynia się do zwiększenia produkcji
-                glikozaminoglikanów (m.in. siarczanu keratanu, heparanu, kwasu
-                hialuronowego), które pomagają w odbudowie chrząstki, co jest
-                szczególnie korzystne dla zwierząt ze zmianami zwyrodnieniowymi
-                stawów.
+                Metylosulfonylometan, czyli MSM, to naturalny związek siarki,
+                który pomaga w utrzymaniu zdrowych stawów poprzez zmniejszenie
+                stanu zapalnego i bólu. MSM może również pomagać w produkcji
+                kolagenu, co przyczynia się do zdrowia chrząstki stawowej.
               </p>
             </div>
           </div>
@@ -419,10 +328,17 @@
         "
       ></div>
     </section>
-    <section
-      style="background: #f6f6f6; height: 100vh"
-      id="products__container"
-    ></section>
+    <section style="background: #f6f6f6" id="products__container">
+      <div id="pagination">
+        <input type="text" />
+        <select name="pagination-amount" id="pagination-amount">
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="75">75</option>
+        </select>
+      </div>
+      <div id="cards__container"></div>
+    </section>
     <script src="js/main.js"></script>
   </body>
 </html>
