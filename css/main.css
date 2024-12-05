@@ -12,6 +12,7 @@ html {
 
 body {
   background-color: #f1f1f1;
+  position: relative;
 }
 
 ul {
@@ -21,6 +22,10 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+img {
+  pointer-events: none;
 }
 
 header {
@@ -270,8 +275,17 @@ h2.section__heading::after {
 }
 
 #products__container {
-  background: #f6f6f6;
-  /* height: 100vh; */
+  /* position: relative; */
+}
+#threshold {
+  position: absolute;
+  margin: 0 auto;
+  height: 120px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: red;
 }
 
 #products__container > div {
@@ -307,23 +321,34 @@ h2.section__heading::after {
   align-self: start;
 }
 
-#cards__container {
-  /* background: red; */
-}
-
 #pagination {
-}
-
-#pagination > input {
-  width: 200px;
-}
-
-#pagination-amount {
-  width: 100px;
-  outline: none;
-  border: 0;
-  background: #ad4844;
-  color: #fff;
+  background: #f6f6f6;
+  padding-block: 80px;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.pagination__text {
+  padding: 10px;
+  border: 2px solid #ad4844;
+  font-weight: bold;
+}
+
+.pagination__amount {
+  height: 42px;
+  background: #ad4844;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.grid__box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.active {
+  font-weight: 700;
 }

@@ -1,28 +1,40 @@
-const productsContainer = document.getElementById("products__container");
-const cardsContainer = document.getElementById("cards__container");
-
 const API_URL = "https://brandstestowy.smallhost.pl/api/random";
 
-const options = {
+const productsContainer = document.getElementById("products__container");
+const cardsContainer = document.getElementById("cards__container");
+const navLinks = document.getElementsByClassName("link");
+// const productFeatures = document.getElementById("product-features");
+// const ingredients = document.getElementById("ingredients");
+// const products = document.getElementById("products__container");
+const threshold = document.getElementById("threshold");
+const paginationAmount = document.getElementById("pagination-amount");
+
+console.log(paginationAmount.value);
+
+const observerOptions = {
   root: null,
   rootMargin: "0px",
-  threshold: 0.3,
+  threshold: 1,
 };
 
-const observer = new IntersectionObserver(observerCallback, options);
+const observer = new IntersectionObserver(observerCallback, observerOptions);
 observer.observe(productsContainer);
+// observer.observe(productFeatures);
+// observer.observe(ingredients);
+// observer.observe(products);
+observer.observe(threshold);
 
 let data;
 
 let pageNumber = 1;
-let pageSize = 25;
+let pageSize = paginationAmount.value;
 
-function renderData(data) {
-  data.forEach((item) => {
+function renderData() {
+  data?.forEach(({ text, id }) => {
     const view = document.createElement("div");
-    view.textContent = item.text;
+    view.textContent = `${text}: ${id}`;
     function logMe() {
-      console.log(item.text);
+      console.log(text);
     }
     view.addEventListener("click", logMe);
     cardsContainer.appendChild(view);
@@ -30,19 +42,21 @@ function renderData(data) {
 }
 
 async function fetchData(pageNumber, pageSize) {
-  const response = await fetch(
-    `${API_URL}?pageNumber=${pageNumber}&pageSize=${pageSize}`
-  );
-  const json = await response.json();
-  data = json.data;
-  renderData(data);
+  try {
+    const response = await fetch(
+      `${API_URL}?pageNumber=${pageNumber}&pageSize=${pageSize}`
+    );
+    const json = await response.json();
+    data = json.data;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-function observerCallback(entries) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      if (data) return;
-      fetchData();
-    }
-  });
+function observerCallback([{ isIntersecting }]) {
+  if (isIntersecting && !data) {
+    fetchData(pageNumber, pageSize).then(() => renderData(data));
+  } else {
+    fetchData(pageNumber, pageSize).then(() => renderData(data));
+  }
 }

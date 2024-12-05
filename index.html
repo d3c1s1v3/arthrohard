@@ -17,9 +17,9 @@
           <img src="img/logo.svg" alt="ARTHROHARD" />
         </a>
         <ul>
-          <li><a href="">CO NAS WYRÓŻNIA</a></li>
-          <li><a href="">SKŁAD</a></li>
-          <li><a href="">PRODUKTY</a></li>
+          <li><a class="link" href="#product-features">CO NAS WYRÓŻNIA</a></li>
+          <li><a class="link" href="#ingredients">SKŁAD</a></li>
+          <li><a class="link" href="#products">PRODUKTY</a></li>
         </ul>
       </div>
     </header>
@@ -48,7 +48,7 @@
         </div>
       </div>
     </section>
-    <section class="section--product-features">
+    <section class="section--product-features" id="product-features">
       <div class="cards__container">
         <div class="card">
           <h3 class="card__heading">
@@ -114,14 +114,14 @@
         </div>
       </div>
     </section>
-    <section style="background-color: #fff">
+    <section style="background-color: #fff" id="ingredients">
       <div
         style="
           max-width: 1546px;
           margin-inline: auto;
-
           display: flex;
           flex-direction: column;
+          align-items: center;
         "
       >
         <h2
@@ -149,8 +149,16 @@
         >
           Co dają poszczególne składniki:
         </h3>
-        <div style="display: flex; padding-top: 100px; height: fit-content">
-          <div style="display: flex; flex-direction: column">
+        <!-- style="display: flex; padding-top: 100px" -->
+        <div class="grid__box" style="padding-top: 100px">
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: start;
+              align-items: center;
+            "
+          >
             <div
               style="
                 display: flex;
@@ -168,7 +176,7 @@
                 Siarczan glukozaminy
               </h4>
               <span style="font-size: 20px; margin-top: 24px">650 mg</span>
-              <p style="max-width: 100%; text-align: center">
+              <p style="text-align: center">
                 Glukozamina jest naturalnym składnikiem chrząstki. Dodatek
                 glukozaminy przyczynia się do zwiększenia produkcji
                 glikozaminoglikanów (m.in. siarczanu keratanu, heparanu, kwasu
@@ -236,11 +244,18 @@
           >
             <img
               src="img/bottle-big.png"
-              style="height: 70%; object-fit: contain"
+              style="object-fit: cover; max-height: 80%"
             />
             <a href="#" class="btn btn--brown">Kup teraz</a>
           </div>
-          <div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: start;
+            "
+          >
             <div
               style="
                 display: flex;
@@ -328,17 +343,18 @@
         "
       ></div>
     </section>
+    <div id="pagination">
+      <span class="pagination__text">Ile na stronie</span>
+      <select class="pagination__amount" id="pagination-amount">
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="75">75</option>
+      </select>
+    </div>
     <section style="background: #f6f6f6" id="products__container">
-      <div id="pagination">
-        <input type="text" />
-        <select name="pagination-amount" id="pagination-amount">
-          <option value="25">25</option>
-          <option value="50">50</option>
-          <option value="75">75</option>
-        </select>
-      </div>
       <div id="cards__container"></div>
     </section>
+    <div id="threshold"></div>
     <script src="js/main.js"></script>
   </body>
 </html>
