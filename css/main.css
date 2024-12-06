@@ -133,11 +133,11 @@ header > div > ul > li > a {
 }
 
 .section--product-features {
-  padding-bottom: 48px;
+  padding-block: 48px;
+  min-height: 50vh;
 }
 
 .section--product-features .cards__container {
-  /* background: lightblue; */
   display: flex;
   max-width: 1546px;
   margin-inline: auto;
@@ -155,17 +155,21 @@ header > div > ul > li > a {
   align-items: center;
   font-size: 30px;
   text-align: center;
-  /* word-break: break-word; */
+
   line-height: 39px;
   font-weight: 400;
 }
 
-h2.section__heading {
+.card > p {
+  line-height: 25px;
+}
+
+.section__heading {
   position: relative;
   font-weight: 400;
 }
 
-h2.section__heading::after {
+.section__heading::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -285,7 +289,7 @@ h2.section__heading::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background: red;
+  /* background: red; */
 }
 
 #products__container > div {
@@ -345,10 +349,56 @@ h2.section__heading::after {
 }
 
 .grid__box {
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-content: center;
 }
 
-.active {
-  font-weight: 700;
+.ingredients__card {
+  padding-block: 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-center;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
 }
+
+#ingredients .ingredients__container {
+  max-width: 1546px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#product__details {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1;
+}
+
+#product__details > div {
+  width: 700px;
+  height: 280px;
+  background: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 8px 24px -5px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 8px 24px -5px rgba(66, 68, 90, 1);
+  box-shadow: 0px 8px 24px -5px rgba(66, 68, 90, 1);
+}
+
+#product__details.show {
+  opacity: 1;
+  pointer-events: all;
+}
+/* git commit -m "popup, refactor, layout fix" */

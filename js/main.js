@@ -3,13 +3,9 @@ const API_URL = "https://brandstestowy.smallhost.pl/api/random";
 const productsContainer = document.getElementById("products__container");
 const cardsContainer = document.getElementById("cards__container");
 const navLinks = document.getElementsByClassName("link");
-// const productFeatures = document.getElementById("product-features");
-// const ingredients = document.getElementById("ingredients");
-// const products = document.getElementById("products__container");
 const threshold = document.getElementById("threshold");
 const paginationAmount = document.getElementById("pagination-amount");
-
-console.log(paginationAmount.value);
+const productDetails = document.getElementById("product__details");
 
 const observerOptions = {
   root: null,
@@ -19,9 +15,6 @@ const observerOptions = {
 
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 observer.observe(productsContainer);
-// observer.observe(productFeatures);
-// observer.observe(ingredients);
-// observer.observe(products);
 observer.observe(threshold);
 
 let data;
@@ -33,10 +26,16 @@ function renderData() {
   data?.forEach(({ text, id }) => {
     const view = document.createElement("div");
     view.textContent = `${text}: ${id}`;
-    function logMe() {
-      console.log(text);
+
+    function toggleMe() {
+      productDetails.innerHTML = `<div>
+        <h5>ID: ${id}</h5>
+        <p>ID: ${text}</p>
+      </div>`;
+      productDetails.classList.add("show");
     }
-    view.addEventListener("click", logMe);
+
+    view.addEventListener("click", toggleMe(id));
     cardsContainer.appendChild(view);
   });
 }
@@ -54,9 +53,6 @@ async function fetchData(pageNumber, pageSize) {
 }
 
 function observerCallback([{ isIntersecting }]) {
-  if (isIntersecting && !data) {
+  if (isIntersecting)
     fetchData(pageNumber, pageSize).then(() => renderData(data));
-  } else {
-    fetchData(pageNumber, pageSize).then(() => renderData(data));
-  }
 }
