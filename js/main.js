@@ -10,6 +10,26 @@ const closePopupBtn = document.getElementById("close__popup__btn");
 const productId = document.getElementById("product__id");
 const productText = document.getElementById("product__text");
 
+const links = document.getElementsByClassName("link");
+
+// TODO: this works but needs cleaning
+for (const link of links) {
+  if (link && link.addEventListener) {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      const href = link.getAttribute("href");
+      if (href) {
+        window.scrollTo({
+          top:
+            document.querySelector(href).getBoundingClientRect().top +
+            window.pageYOffset,
+          behavior: "smooth",
+        });
+      }
+    });
+  }
+}
+
 const observerOptions = {
   root: null,
   rootMargin: "0px",
