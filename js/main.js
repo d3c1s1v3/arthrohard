@@ -6,6 +6,9 @@ const navLinks = document.getElementsByClassName("link");
 const threshold = document.getElementById("threshold");
 const paginationAmount = document.getElementById("pagination-amount");
 const productDetails = document.getElementById("product__details");
+const closePopupBtn = document.getElementById("close__popup__btn");
+const productId = document.getElementById("product__id");
+const productText = document.getElementById("product__text");
 
 const observerOptions = {
   root: null,
@@ -25,17 +28,20 @@ let pageSize = paginationAmount.value;
 function renderData() {
   data?.forEach(({ text, id }) => {
     const view = document.createElement("div");
-    view.textContent = `${text}: ${id}`;
+    view.innerHTML = `
+    <h3>ID: ${id}</h3>
+    `;
 
     function toggleMe() {
-      productDetails.innerHTML = `<div>
-        <h5>ID: ${id}</h5>
-        <p>ID: ${text}</p>
-      </div>`;
+      productId.textContent = `ID: ${id}`;
+      productText.textContent = `${text}`;
       productDetails.classList.add("show");
     }
 
-    view.addEventListener("click", toggleMe(id));
+    view.addEventListener("click", toggleMe);
+    closePopupBtn.addEventListener("click", () =>
+      productDetails.classList.remove("show")
+    );
     cardsContainer.appendChild(view);
   });
 }
@@ -47,6 +53,7 @@ async function fetchData(pageNumber, pageSize) {
     );
     const json = await response.json();
     data = json.data;
+    console.log(data);
   } catch (error) {
     console.log(error);
   }

@@ -155,7 +155,6 @@ header > div > ul > li > a {
   align-items: center;
   font-size: 30px;
   text-align: center;
-
   line-height: 39px;
   font-weight: 400;
 }
@@ -258,9 +257,14 @@ header > div > ul > li > a {
 .card__heading {
   position: relative;
   text-wrap: nowrap;
+  width: 60%;
 }
 
-.card__heading::after {
+.ingredients__card p {
+  line-height: 25px;
+}
+
+.ingredients__card:hover .card__heading::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -279,7 +283,7 @@ header > div > ul > li > a {
 }
 
 #products__container {
-  /* position: relative; */
+  background: #f6f6f6;
 }
 #threshold {
   position: absolute;
@@ -363,7 +367,6 @@ header > div > ul > li > a {
   justify-content: space-center;
   align-items: center;
   gap: 24px;
-  margin-bottom: 32px;
 }
 
 #ingredients .ingredients__container {
@@ -397,8 +400,32 @@ header > div > ul > li > a {
   box-shadow: 0px 8px 24px -5px rgba(66, 68, 90, 1);
 }
 
+#product__details .product__details__container {
+  position: relative;
+}
+
+#close__popup__btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.product__details__content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 #product__details.show {
   opacity: 1;
   pointer-events: all;
 }
-/* git commit -m "popup, refactor, layout fix" */
