@@ -29,7 +29,7 @@ img {
 }
 
 header {
-  height: 122px;
+  height: 112px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -93,14 +93,14 @@ header > div > ul > li > a {
 .section--hero__img__container > img:first-child {
   position: absolute;
   z-index: -1;
-  object-fit: contain;
+  object-fit: cover;
   transform: scale(1.5);
-  bottom: 20%;
-  left: 7%;
+  bottom: 30%;
+  left: 12%;
 }
 
 .section--hero__img__container > img:nth-child(2) {
-  width: 673px;
+  width: 773px;
   height: 867px;
   object-fit: cover;
 }
@@ -109,9 +109,9 @@ header > div > ul > li > a {
   position: absolute;
   z-index: -1;
   object-fit: contain;
-  transform: scale(1.5);
-  bottom: 40%;
-  right: 10%;
+  transform: scale(1.6);
+  bottom: 45%;
+  right: 15%;
 }
 
 .section--hero__area--right {
@@ -154,12 +154,16 @@ header > div > ul > li > a {
 }
 
 .section--product-features {
+  height: 100vh;
   padding-block: 48px;
-  min-height: 50vh;
+  display: flex;
+  align-items: center;
 }
 
 .section--product-features .cards__container {
+  height: 60%;
   display: flex;
+  gap: 96px;
   max-width: 1546px;
   margin-inline: auto;
   justify-content: space-between;
@@ -305,6 +309,7 @@ header > div > ul > li > a {
 
 #products__container {
   background: #f6f6f6;
+  /* min-height: 100vh; */
 }
 #threshold {
   position: absolute;
@@ -352,7 +357,8 @@ header > div > ul > li > a {
 
 #pagination {
   background: #f6f6f6;
-  padding-block: 80px;
+  padding-top: 120px;
+  padding-bottom: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -373,13 +379,6 @@ header > div > ul > li > a {
   cursor: pointer;
 }
 
-.grid__box {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  align-content: center;
-}
-
 .ingredients--left {
   display: flex;
   flex-direction: column;
@@ -390,8 +389,19 @@ header > div > ul > li > a {
 .ingredients--center {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: center;
+}
+
+.ingredients--center > a {
+  margin: 0 auto;
+}
+
+.ingredients--center > .big-bottle {
+  max-height: 90%;
+}
+
+.ingredients--center .slime-left,
+.ingredients--center .slime-right {
+  position: absolute;
 }
 
 .ingredients--right {
@@ -402,7 +412,7 @@ header > div > ul > li > a {
 }
 
 .ingredients__card {
-  padding-block: 32px;
+  /* padding-block: 32px; */
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -417,23 +427,34 @@ header > div > ul > li > a {
 
 #big-dog-img__container {
   position: relative;
-  flex: 1;
-  margin-top: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: #fff;
 }
 
 #big-dog-img__container > img {
   display: block;
+  margin: 0 auto;
+}
+
+#ingredients {
+  min-height: 100vh;
+  padding-bottom: 128px;
 }
 
 #ingredients .ingredients__container {
   max-width: 1546px;
   margin-inline: auto;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 128px;
+  padding-top: 100px;
+}
+
+.grid__box {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 #product__details {

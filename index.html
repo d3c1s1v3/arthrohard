@@ -24,6 +24,8 @@
       </div>
     </header>
     <section class="section--hero">
+      <img src="img/Vector1.png" class="" alt="" />
+      <img src="" alt="" />
       <div>
         <div class="section--top">
           <div class="section--hero__img__container">
@@ -33,7 +35,7 @@
           </div>
           <div class="section--hero__area--right">
             <img src="/img/logo.svg" style="width: 100%; margin-bottom: 50px" />
-            <h2>
+            <h2 class="section--hero__subheading">
               Lab-V Arthrohard Preparat<br />
               na wsparcie stawów dla psa i kota
             </h2>
@@ -126,7 +128,6 @@
             -webkit-text-fill-color: transparent;
             text-align: center;
             font-size: 48px;
-            padding-top: 64px;
           "
           class="section__heading"
         >
@@ -136,14 +137,13 @@
           style="
             font-weight: 400;
             text-align: center;
-            margin-top: 128px;
             font-size: 31px;
             line-height: 39px;
           "
         >
           Co dają poszczególne składniki:
         </h3>
-        <div class="grid__box" style="padding-top: 100px">
+        <div class="grid__box">
           <div class="ingredients--left">
             <div class="ingredients__card">
               <div class="card__circle--gray"></div>
@@ -194,11 +194,10 @@
             </div>
           </div>
           <div class="ingredients--center">
-            <img
-              src="img/bottle-big.png"
-              style="object-fit: cover; max-height: 80%"
-            />
-            <a href="#" class="btn btn--brown">Kup teraz</a>
+            <img src="img/bottle-big.png" class="big-bottle" />
+            <img src="img/slime-left.png" alt="" class="slime-left" />
+            <img src="img/slime-right.svg" alt="" class="slime-right" />
+            right <a href="#" class="btn btn--brown">Kup teraz</a>
           </div>
           <div class="ingredients--right">
             <div class="ingredients__card">
@@ -248,18 +247,18 @@
           </div>
         </div>
       </div>
-      <div id="big-dog-img__container">
-        <img src="img/piesek 1.png" alt="" />
-      </div>
     </section>
-    <div id="pagination">
+    <section id="big-dog-img__container">
+      <img src="img/piesek 1.png" alt="" />
+    </section>
+    <section id="pagination">
       <span class="pagination__text">Ile na stronie</span>
       <select class="pagination__amount" id="pagination-amount">
         <option value="25">25</option>
         <option value="50">50</option>
         <option value="75">75</option>
       </select>
-    </div>
+    </section>
     <section id="products__container">
       <div id="cards__container"></div>
     </section>
