@@ -12,38 +12,29 @@ const productText = document.getElementById("product__text");
 
 const links = document.getElementsByClassName("link");
 
-// TODO: this works but needs cleaning
-for (const link of links) {
-  if (link && link.addEventListener) {
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      const href = link.getAttribute("href");
-      if (href) {
-        window.scrollTo({
-          top:
-            document.querySelector(href).getBoundingClientRect().top +
-            window.pageYOffset,
-          behavior: "smooth",
-        });
-      }
-    });
-  }
-}
-
 const observerOptions = {
   root: null,
   rootMargin: "0px",
   threshold: 1,
 };
 
-const observer = new IntersectionObserver(observerCallback, observerOptions);
-observer.observe(productsContainer);
-observer.observe(threshold);
+const productsObserver = new IntersectionObserver(
+  productsObserverCallback,
+  observerOptions
+);
+productsObserver.observe(productsContainer);
+productsObserver.observe(threshold);
 
 let data;
 
 let pageNumber = 1;
 let pageSize = paginationAmount.value;
+
+function handlePageSizeChange(e) {
+  pageSize = e.target.value;
+}
+
+paginationAmount.addEventListener("change", handlePageSizeChange);
 
 function renderData() {
   data?.forEach(({ text, id }) => {
@@ -79,7 +70,7 @@ async function fetchData(pageNumber, pageSize) {
   }
 }
 
-function observerCallback([{ isIntersecting }]) {
+function productsObserverCallback([{ isIntersecting }]) {
   if (isIntersecting)
     fetchData(pageNumber, pageSize).then(() => renderData(data));
 }

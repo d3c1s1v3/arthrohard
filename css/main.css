@@ -69,6 +69,7 @@ header > div > ul > li > a {
 
 .section--hero {
   height: 100vh;
+  position: relative;
 }
 
 .section--hero > div {
@@ -98,17 +99,24 @@ header > div > ul > li > a {
   left: 7%;
 }
 
-.section--top > div:first-child > img:nth-child(2) {
+.section--hero__img__container > img:nth-child(2) {
   width: 673px;
   height: 867px;
   object-fit: cover;
 }
 
-.section--top > div:first-child {
-  position: relative;
-  flex: 1;
+.section--hero__img__container > img:last-child {
+  position: absolute;
+  z-index: -1;
+  object-fit: contain;
+  transform: scale(1.5);
+  bottom: 40%;
+  right: 10%;
 }
 
+.section--hero__area--right {
+  padding-left: 50px;
+}
 .section--top > div:last-child {
   display: flex;
   flex: 1;
