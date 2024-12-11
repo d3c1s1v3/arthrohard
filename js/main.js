@@ -1,9 +1,9 @@
 const API_URL = "https://brandstestowy.smallhost.pl/api/random";
 
-const productsContainer = document.getElementById("products__container");
+export const products = document.getElementById("products");
 const cardsContainer = document.getElementById("cards__container");
 const threshold = document.getElementById("threshold");
-const paginationAmount = document.getElementById("pagination-amount");
+let itemsAmount = document.querySelector(".items-amount");
 const productDetails = document.getElementById("product__details");
 const closePopupBtn = document.getElementById("close__popup__btn");
 const productId = document.getElementById("product__id");
@@ -15,23 +15,18 @@ const fetchMoreDataObserver = new IntersectionObserver(
   fetchMoreDataObserverCallback
 );
 
-fetchDataObserver.observe(productsContainer);
+fetchDataObserver.observe(products);
 fetchMoreDataObserver.observe(threshold);
 
 let data;
 
 let pageNumber = 1;
-let pageSize = paginationAmount.value;
-
-function handlePageSizeChange(e) {
-  pageSize = e.target.value;
-}
-
-paginationAmount.addEventListener("change", handlePageSizeChange);
+let pageSize = 25;
 
 function renderData() {
   data?.forEach(({ text, id }) => {
     const view = document.createElement("div");
+    view.classList.add("product__card");
     view.innerHTML = `
     <h3>ID: ${id}</h3>
     `;
@@ -57,7 +52,6 @@ async function fetchData(pageNumber, pageSize) {
     );
     const json = await response.json();
     data = json.data;
-    // prosze zobaczyc ze dane w konsoli zostaja pobrane dopiero po dojechaniu do dolnej sekcji
     console.log(data);
   } catch (error) {
     console.log(error);
@@ -65,15 +59,12 @@ async function fetchData(pageNumber, pageSize) {
 }
 
 function fetchDataObserverCallback([{ isIntersecting }]) {
-  if (!data && isIntersecting) {
+  if (!data && isIntersecting)
     fetchData(pageNumber, pageSize).then(() => renderData(data));
-    pageNumber++;
-  }
 }
 
 function fetchMoreDataObserverCallback([{ isIntersecting }]) {
-  if (isIntersecting) {
+  if (isIntersecting)
     fetchData(pageNumber, pageSize).then(() => renderData(data));
-    pageNumber++;
-  }
+  pageNumber++;
 }
