@@ -1,14 +1,20 @@
 const API_URL = "https://brandstestowy.smallhost.pl/api/random";
 
-export const products = document.getElementById("products");
-const cardsContainer = document.getElementById("cards__container");
+const links = document.getElementsByClassName("link");
+const products = document.getElementById("products");
+const productFeaturesSection = document.getElementById("product-features");
+const ingredientsSection = document.getElementById("ingredients");
+const productCardsContainer = document.getElementById(
+  "product--cards__container"
+);
 const threshold = document.getElementById("threshold");
 let itemsAmount = document.querySelector(".items-amount");
 const productDetails = document.getElementById("product__details");
-const closePopupBtn = document.getElementById("close__popup__btn");
 const productId = document.getElementById("product__id");
-const productText = document.getElementById("product__text");
-const links = document.getElementsByClassName("link");
+const productName = document.getElementById("product__name");
+const closePopupBtn = document.getElementById("close__popup__btn");
+const bigDogImg = document.getElementsByClassName("big-dog")[0];
+const pagination = document.getElementById("pagination");
 
 const fetchDataObserver = new IntersectionObserver(fetchDataObserverCallback);
 const fetchMoreDataObserver = new IntersectionObserver(
@@ -26,22 +32,19 @@ let pageSize = 25;
 function renderData() {
   data?.forEach(({ text, id }) => {
     const view = document.createElement("div");
-    view.classList.add("product__card");
     view.innerHTML = `
-    <h3>ID: ${id}</h3>
+    <h3 class="product__card">ID: ${id}</h3>
     `;
-
-    function toggleMe() {
+    function togglePopup() {
       productId.textContent = `ID: ${id}`;
-      productText.textContent = `${text}`;
+      productName.textContent = `Nazwa: ${text}`;
       productDetails.classList.add("show");
     }
-
-    view.addEventListener("click", toggleMe);
+    view.addEventListener("click", togglePopup);
     closePopupBtn.addEventListener("click", () =>
       productDetails.classList.remove("show")
     );
-    cardsContainer.appendChild(view);
+    productCardsContainer.appendChild(view);
   });
 }
 
@@ -68,3 +71,8 @@ function fetchMoreDataObserverCallback([{ isIntersecting }]) {
     fetchData(pageNumber, pageSize).then(() => renderData(data));
   pageNumber++;
 }
+
+window.onscroll = () => {
+  const height = 2954;
+  if (window.scrollY >= height) bigDogImg.style.transform = "translateY(0)";
+};

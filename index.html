@@ -9,7 +9,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/media-queries.css" />
-    <!-- <link rel="stylesheet" href="css/animations.css" /> -->
     <title>ARTHROHARD</title>
   </head>
   <body>
@@ -19,7 +18,9 @@
           <img src="img/logo.svg" alt="ARTHROHARD" />
         </a>
         <ul class="links__list">
-          <li><a class="link" href="#product-features">CO NAS WYRÓŻNIA</a></li>
+          <li>
+            <a class="link" href="#product-features">CO NAS WYRÓŻNIA</a>
+          </li>
           <li><a class="link" href="#ingredients">SKŁAD</a></li>
           <li><a class="link" href="#products">PRODUKTY</a></li>
         </ul>
@@ -211,27 +212,36 @@
     </section>
     <section id="big-dog-img__container">
       <img src="img/slime-left.svg" alt="" class="slime-left parallax-effect" />
-      <img src="img/piesek 1.png" alt="" class="big-dog parallax-effect" />
+      <img src="img/piesek 1.png" alt="" class="big-dog" />
       <img src="img/slime-left.svg" alt="" class="slime-right" />
     </section>
     <section id="pagination">
       <span class="pagination__text">Ile na stronie</span>
-      <span class="items-amount"></span>
+      <span class="items-amount">50</span>
     </section>
     <section id="products">
-      <div id="cards__container"></div>
+      <div id="product--cards__container"></div>
     </section>
     <div id="threshold"></div>
     <div id="product__details">
-      <div class="product__details__container">
+      <div class="product--details__container">
         <div class="product__details__content">
-          <h3 id="product__id"></h3>
-          <h4 id="product__text"></h4>
+          <div>
+            <h3 id="product__id"></h3>
+            <button id="close__popup__btn">
+              <img
+                src="img/close-button.svg"
+                width="20px"
+                height="20px"
+                alt=""
+              />
+            </button>
+          </div>
+          <h4 id="product__name"></h4>
+          <div class="space"></div>
         </div>
-        <button id="close__popup__btn">X</button>
       </div>
     </div>
     <script type="module" src="js/main.js"></script>
-    <script type="module" src="js/intersection.js"></script>
   </body>
 </html>

@@ -80,11 +80,11 @@ header .container {
 .links__list > li .link.active::after {
   content: "";
   position: absolute;
-  height: 1px;
+  height: 0.1rem;
   background: #111;
   width: 100%;
   left: 0;
-  bottom: -4px;
+  bottom: -0.4rem;
 }
 
 .section--hero {
@@ -94,7 +94,7 @@ header .container {
 
 #hero__logo {
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 5rem;
 }
 
 .vector1--hero {
@@ -102,14 +102,14 @@ header .container {
   right: 0;
   bottom: 5%;
   z-index: -1;
-  width: 450px;
+  width: 45rem;
 }
 .vector2--hero {
   position: absolute;
   left: 0;
   bottom: 0%;
   z-index: -1;
-  width: 450px;
+  width: 45rem;
 }
 
 .vector3--hero {
@@ -117,7 +117,7 @@ header .container {
   right: 0;
   bottom: 40%;
   z-index: -1;
-  width: 100px;
+  width: 10rem;
 }
 
 .section--hero > .container {
@@ -156,7 +156,7 @@ header .container {
 }
 
 .section--hero__img__container > img:last-child {
-  width: 150px;
+  width: 15rem;
   position: absolute;
   z-index: -1;
   bottom: 30%;
@@ -175,10 +175,10 @@ header .container {
 }
 
 .section--hero__subheading {
-  margin-bottom: 20px;
-  font-size: 48px;
+  margin-bottom: 2rem;
+  font-size: 4.8rem;
   font-weight: 500;
-  line-height: 61px;
+  line-height: 6.1rem;
 }
 
 .linear-gradient {
@@ -188,10 +188,10 @@ header .container {
 }
 
 .section--hero__text {
-  font-size: 20px;
-  line-height: 25px;
+  font-size: 2rem;
+  line-height: 2.5rem;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .section--hero .section--bottom {
@@ -201,15 +201,15 @@ header .container {
 .section__heading {
   color: #111;
   text-align: center;
-  font-size: 48px;
+  font-size: 4.8rem;
   background: linear-gradient(135deg, #111, #b1b1b1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .section--product-features {
-  padding-bottom: 10rem;
-  padding-top: 4rem;
+  padding-bottom: 20rem;
+  padding-top: 12rem;
   display: flex;
   align-items: center;
 }
@@ -217,14 +217,15 @@ header .container {
 .section--product-features .cards__container {
   height: 60%;
   display: flex;
-  gap: 96px;
-  max-width: 1546px;
+  gap: 9.6rem;
+  /* max-width: 1546px; */
   margin-inline: auto;
   justify-content: space-between;
 }
 
-.section--product-features .cards__container .card {
-  padding: 12px;
+.product-features__card {
+  margin-inline: 3rem;
+  padding: 1.2rem;
   flex: 1;
 }
 
@@ -232,17 +233,17 @@ header .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 30px;
+  font-size: 3rem;
   text-align: center;
-  line-height: 39px;
+  line-height: 3.9rem;
   font-weight: 400;
 }
 
 .card__img__container {
   position: relative;
   z-index: 1;
-  width: 350px;
-  height: 350px;
+  width: 35rem;
+  height: 35rem;
 }
 
 .card__img__container:nth-of-type(2) {
@@ -275,15 +276,15 @@ header .container {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -32px;
+  bottom: -3.2rem;
   transform: translateX(-50%);
   height: 1px;
-  width: 126px;
+  width: 12.6rem;
   background-color: #111;
 }
 
 .btn {
-  font-size: 18px;
+  font-size: 1.8rem;
   padding: 1.5rem 4rem;
   max-width: 17.1rem;
   display: flex;
@@ -377,7 +378,7 @@ header .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 32px;
+  margin-bottom: 3.2rem;
 }
 
 .product-features__card__row__container {
@@ -389,8 +390,8 @@ header .container {
 #ingredients .ingredients__container > h3 {
   font-weight: 400;
   text-align: center;
-  font-size: 31px;
-  line-height: 39px;
+  font-size: 3.1rem;
+  line-height: 3.9rem;
   color: #111;
 }
 
@@ -500,7 +501,7 @@ header .container {
 #big-dog-img__container .slime-left {
   top: 25%;
   left: 39%;
-  width: 180px;
+  width: 18rem;
   transform: rotate(-30deg);
 }
 
@@ -508,19 +509,22 @@ header .container {
   position: relative;
   z-index: 1;
   vertical-align: middle;
+  transform: translateY(100%);
+  transition: transform 0.8s ease-out;
+  /* animation: parallax-dog 1s ease-in-out infinite; */
 }
 
 #big-dog-img__container .slime-right {
   bottom: 0;
   right: 37%;
-  width: 180px;
+  width: 18rem;
   transform: rotate(30deg);
 }
 
 #ingredients {
   min-height: 100vh;
   background: #f6f6f6;
-  padding-bottom: 128px;
+  padding-bottom: 12.8rem;
 }
 
 #ingredients .ingredients__container {
@@ -530,8 +534,8 @@ header .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 128px;
-  padding-top: 100px;
+  gap: 12.8rem;
+  padding-top: 10rem;
 }
 
 #product__details {
@@ -547,10 +551,10 @@ header .container {
   z-index: 1;
 }
 
-#product__details .product__details__container {
+.product--details__container {
   position: relative;
-  width: 700px;
-  height: 280px;
+  width: 70rem;
+  height: 28rem;
   background: #fff;
   border-radius: 10px;
   -webkit-box-shadow: 0px 8px 24px -5px rgba(66, 68, 90, 1);
@@ -559,14 +563,11 @@ header .container {
 }
 
 #close__popup__btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
   background: none;
   border: none;
   outline: none;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 2.4rem;
+  font-weight: 500;
   cursor: pointer;
 }
 
@@ -575,8 +576,26 @@ header .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+#product__id {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+#product__name {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.product__details__content > div {
+  display: flex;
+  align-self: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
 #product__details.show {
@@ -600,23 +619,31 @@ header .container {
   /* background: red; */
 }
 
-#cards__container {
+#product--cards__container {
   max-width: 1546px;
   padding-block: 56px;
   height: 100%;
   margin-inline: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 32px;
+  gap: 3.2rem;
 }
 
 .product__card {
   background: #ccc;
-  height: 350px;
+  height: 35rem;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 2rem;
+  color: #222;
+  cursor: pointer;
+  transition: background 0.1s ease-in-out;
+}
+
+.product__card:hover {
+  background: #ddd;
 }
 
 #products__container > div > div:nth-child(1),
@@ -645,14 +672,18 @@ header .container {
 }
 
 .pagination__text {
-  padding: 10px;
-  border: 2px solid #ad4844;
+  height: 4.2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  padding: 1rem;
+  border: 0.2rem solid #ad4844;
   font-weight: bold;
 }
 
 .items-amount {
-  height: 42px;
-  width: 42px;
+  height: 4.2rem;
+  width: 4.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -660,4 +691,5 @@ header .container {
   border: none;
   outline: none;
   color: #fff;
+  font-size: 1.6rem;
 }
