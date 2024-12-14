@@ -15,6 +15,10 @@ const productName = document.getElementById("product__name");
 const closePopupBtn = document.getElementById("close__popup__btn");
 const bigDogImg = document.getElementsByClassName("big-dog")[0];
 const pagination = document.getElementById("pagination");
+const hambugrer = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobile-menu");
+
+hambugrer.addEventListener("click", toggleMobileMenu);
 
 const fetchDataObserver = new IntersectionObserver(fetchDataObserverCallback);
 const fetchMoreDataObserver = new IntersectionObserver(
@@ -76,3 +80,7 @@ window.onscroll = () => {
   const height = 2954;
   if (window.scrollY >= height) bigDogImg.style.transform = "translateY(0)";
 };
+
+function toggleMobileMenu() {
+  mobileMenu.classList.toggle("show");
+}

@@ -6,9 +6,6 @@
   box-sizing: border-box;
 }
 
-:root {
-}
-
 html {
   font-size: 62.5%;
   font-family: sans-serif;
@@ -18,6 +15,7 @@ html {
 body {
   background-color: #f1f1f1;
   position: relative;
+  overflow-x: hidden;
 }
 
 ul {
@@ -34,11 +32,11 @@ img {
 }
 
 header {
-  height: 112px;
+  padding-block: 3rem;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 100;
   background-color: #f1f1f1;
   -webkit-box-shadow: 0px 8px 7px 0px rgba(66, 68, 90, 0.5);
   -moz-box-shadow: 0px 8px 7px 0px rgba(66, 68, 90, 0.5);
@@ -85,6 +83,18 @@ header .container {
   width: 100%;
   left: 0;
   bottom: -0.4rem;
+}
+
+.hamburger {
+  z-index: 100;
+  position: relative;
+  height: 3rem;
+  width: 3rem;
+  display: none;
+}
+
+.hamburger > img {
+  width: 100%;
 }
 
 .section--hero {
@@ -181,17 +191,26 @@ header .container {
   line-height: 6.1rem;
 }
 
-.linear-gradient {
-  background: linear-gradient(135deg, #111, #b1b1b1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .section--hero__text {
   font-size: 2rem;
   line-height: 2.5rem;
   font-weight: 400;
   margin-bottom: 2rem;
+}
+
+.linebreak {
+  display: inline;
+}
+
+.linebreak::before {
+  content: "\A";
+  white-space: pre;
+}
+
+.linear-gradient {
+  background: linear-gradient(135deg, #111, #b1b1b1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .section--hero .section--bottom {
@@ -217,14 +236,12 @@ header .container {
 .section--product-features .cards__container {
   height: 60%;
   display: flex;
-  gap: 9.6rem;
-  /* max-width: 1546px; */
+  gap: 13.6rem;
   margin-inline: auto;
   justify-content: space-between;
 }
 
 .product-features__card {
-  margin-inline: 3rem;
   padding: 1.2rem;
   flex: 1;
 }
@@ -360,7 +377,7 @@ header .container {
   padding: 1.8rem;
   border-radius: 50%;
   background: #fff;
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
 .card__number__text {
@@ -385,6 +402,10 @@ header .container {
   display: flex;
   flex-direction: column;
   align-items: start;
+}
+
+#product-effects {
+  display: none;
 }
 
 #ingredients .ingredients__container > h3 {
@@ -511,7 +532,6 @@ header .container {
   vertical-align: middle;
   transform: translateY(100%);
   transition: transform 0.8s ease-out;
-  /* animation: parallax-dog 1s ease-in-out infinite; */
 }
 
 #big-dog-img__container .slime-right {
@@ -692,4 +712,34 @@ header .container {
   outline: none;
   color: #fff;
   font-size: 1.6rem;
+}
+
+#mobile-menu {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: -100%;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 100;
+  transition: 0.3s ease-in-out;
+}
+
+#mobile-menu.show {
+  top: 90px;
+}
+
+#mobile-menu > ul {
+  background: #ad4844;
+  width: 90%;
+  margin: 0 auto;
+  height: 500px;
+  text-align: center;
+}
+
+#mobile-menu > ul > li > a {
+  color: #d8d8d8;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-block: 3rem;
 }
