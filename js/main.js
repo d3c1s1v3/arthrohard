@@ -24,7 +24,14 @@ const fetchDataObserver = new IntersectionObserver(fetchDataObserverCallback);
 const fetchMoreDataObserver = new IntersectionObserver(
   fetchMoreDataObserverCallback
 );
+const currentSectionObserver = new IntersectionObserver(
+  currentSectionObserverCallback
+);
 
+const sections = [productFeaturesSection, ingredientsSection, products];
+sections.forEach((section) => {
+  currentSectionObserver.observe(section);
+});
 fetchDataObserver.observe(products);
 fetchMoreDataObserver.observe(threshold);
 
@@ -74,6 +81,23 @@ function fetchMoreDataObserverCallback([{ isIntersecting }]) {
   if (isIntersecting)
     fetchData(pageNumber, pageSize).then(() => renderData(data));
   pageNumber++;
+}
+
+function currentSectionObserverCallback(entries) {
+  entries.forEach(({ isIntersecting, target }) => {
+    const id = target.id;
+    const correspondingLink = Array.from(links).find(
+      (link) => link.getAttribute("href").split("#")[1] === id
+    );
+
+    if (isIntersecting) {
+      console.log(`${id} is intersecting`);
+      correspondingLink?.classList.add("active");
+    } else {
+      console.log(`${id} is not intersecting`);
+      correspondingLink?.classList.remove("active");
+    }
+  });
 }
 
 window.onscroll = () => {

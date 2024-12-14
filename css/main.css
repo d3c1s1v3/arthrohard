@@ -73,13 +73,14 @@ header .container {
 
 .links__list > li .link.active {
   font-weight: 700;
+  transition: 0.1s ease-out;
 }
 
 .links__list > li .link.active::after {
   content: "";
   position: absolute;
   height: 0.1rem;
-  background: #111;
+  background: #777;
   width: 100%;
   left: 0;
   bottom: -0.4rem;
@@ -227,7 +228,7 @@ header .container {
 }
 
 .section--product-features {
-  padding-bottom: 20rem;
+  margin-bottom: 20rem;
   padding-top: 12rem;
   display: flex;
   align-items: center;
@@ -636,7 +637,6 @@ header .container {
   left: 0;
   right: 0;
   bottom: 0;
-  /* background: red; */
 }
 
 #product--cards__container {
