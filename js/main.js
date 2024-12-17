@@ -13,7 +13,6 @@ const productDetails = document.getElementById("product__details");
 const productId = document.getElementById("product__id");
 const productName = document.getElementById("product__name");
 const closePopupBtn = document.getElementById("close__popup__btn");
-const bigDogImg = document.getElementsByClassName("big-dog")[0];
 const pagination = document.getElementById("pagination");
 const hambugrer = document.getElementById("hamburger");
 const mobileMenu = document.getElementById("mobile-menu");
@@ -79,8 +78,9 @@ function fetchDataObserverCallback([{ isIntersecting }]) {
 
 function fetchMoreDataObserverCallback([{ isIntersecting }]) {
   if (isIntersecting)
-    fetchData(pageNumber, pageSize).then(() => renderData(data));
-  pageNumber++;
+    fetchData(pageNumber, pageSize)
+      .then(() => renderData(data))
+      .then(() => pageNumber++);
 }
 
 function currentSectionObserverCallback(entries) {
@@ -99,11 +99,6 @@ function currentSectionObserverCallback(entries) {
     }
   });
 }
-
-window.onscroll = () => {
-  const height = 2954;
-  if (window.scrollY >= height) bigDogImg.style.transform = "translateY(0)";
-};
 
 function toggleMobileMenu() {
   mobileMenu.classList.toggle("show");

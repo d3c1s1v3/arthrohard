@@ -9,7 +9,7 @@
   --screen-xxxxl: 1920px;
 }
 
-@media screen and (max-width: 512px) {
+@media screen and (max-width: 412px) {
   body {
     background: #f1f1f1;
   }
@@ -41,23 +41,27 @@
 
   .section--hero__img__container {
     position: relative;
-    min-width: 28.6rem;
-    min-height: 56.8rem;
+    width: 100%;
+  }
+
+  .hero--img {
+    transform: scale(0.7);
+    overflow: visible;
   }
 
   .section--hero__img__container > img:first-child {
     position: absolute;
     z-index: -1;
-    bottom: 5%;
-    left: 7%;
+    bottom: 12%;
+    left: 0;
   }
 
   .section--hero__img__container > img:last-child {
     width: 15rem;
     position: absolute;
     z-index: -1;
-    bottom: 16%;
-    right: 10%;
+    bottom: 30%;
+    right: 0;
   }
 
   .section--hero--top--right__area {
@@ -94,11 +98,11 @@
 
   .section__heading {
     font-size: 3.5rem;
+    padding-inline: 1rem;
   }
 
   .cards__container {
     flex-direction: column;
-    
   }
 
   .product-features__card__row__container {
@@ -144,25 +148,9 @@
 
   #big-dog-img__container .big-dog {
     position: relative;
-    width: 80rem;
+    width: 70rem;
     z-index: 1;
     vertical-align: middle;
-    transform: translateY(100%);
-    transition: transform 0.8s ease-out;
-  }
-
-  #big-dog-img__container .slime-left {
-    top: 25%;
-    left: 9%;
-    width: 14rem;
-    transform: rotate(-30deg);
-  }
-
-  #big-dog-img__container .slime-right {
-    bottom: 0;
-    right: 7%;
-    width: 14rem;
-    transform: rotate(30deg);
   }
 
   #product--cards__container {
@@ -174,6 +162,5 @@
   .product--details__container {
     width: 70%;
     height: 60%;
-
   }
 }

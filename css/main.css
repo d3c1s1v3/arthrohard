@@ -99,7 +99,7 @@ header .container {
 }
 
 .section--hero {
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
 }
 
@@ -118,7 +118,7 @@ header .container {
 .vector2--hero {
   position: absolute;
   left: 0;
-  bottom: 0%;
+  bottom: -20%;
   z-index: -1;
   width: 45rem;
 }
@@ -147,10 +147,13 @@ header .container {
 
 .section--hero__img__container {
   position: relative;
-  min-width: 28.6rem;
-  min-height: 36.8rem;
-  max-width: 77.3rem;
-  max-height: 86.7rem;
+  width: 28.6rem;
+  height: 36.8rem;
+  width: 77.3rem;
+  height: 86.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero--img {
@@ -235,11 +238,11 @@ header .container {
 }
 
 .section--product-features .cards__container {
-  height: 60%;
+  /* height: 60%; */
   display: flex;
+  justify-content: space-between;
   gap: 13.6rem;
   margin-inline: auto;
-  justify-content: space-between;
 }
 
 .product-features__card {
@@ -371,7 +374,7 @@ header .container {
   font-weight: 700;
   width: 5.6rem;
   height: 5.6rem;
-  margin-right: 1.6rem;
+  margin-right: 2.6rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -437,7 +440,13 @@ header .container {
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
-  background: #d9d9d9;
+  /* background: #d9d9d9; */
+}
+
+.card__circle--gray > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .ingredients--card__heading {
@@ -516,8 +525,14 @@ header .container {
 
 #big-dog-img__container {
   position: relative;
-  background: #fff;
   text-align: center;
+  background: url("/img/svg/slime-left.svg"), url("/img/svg/slime-left.svg"),
+    #fff;
+  background-repeat: no-repeat;
+  background-position: 35% 67%, 68% 60%;
+  background-attachment: fixed;
+
+  background-size: 16rem;
 }
 
 #big-dog-img__container .slime-left {
@@ -531,8 +546,6 @@ header .container {
   position: relative;
   z-index: 1;
   vertical-align: middle;
-  transform: translateY(100%);
-  transition: transform 0.8s ease-out;
 }
 
 #big-dog-img__container .slime-right {
