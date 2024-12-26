@@ -1,5 +1,6 @@
 const API_URL = "https://brandstestowy.smallhost.pl/api/random";
 
+// SELECTORS
 const links = document.getElementsByClassName("link");
 const products = document.getElementById("products");
 const productFeaturesSection = document.getElementById("product-features");
@@ -8,7 +9,10 @@ const productCardsContainer = document.getElementById(
   "product--cards__container"
 );
 const threshold = document.getElementById("threshold");
-let itemsAmount = document.querySelector(".items-amount");
+let itemsAmount = document.getElementById("items-amount");
+const currentPageCount = document.getElementById("current-page-count");
+const dropdownOptions = document.getElementById("dropdown-options");
+const dropdownOptionsItems = document.getElementsByClassName("option");
 const productDetails = document.getElementById("product__details");
 const productId = document.getElementById("product__id");
 const productName = document.getElementById("product__name");
@@ -16,6 +20,11 @@ const closePopupBtn = document.getElementById("close__popup__btn");
 const pagination = document.getElementById("pagination");
 const hambugrer = document.getElementById("hamburger");
 const mobileMenu = document.getElementById("mobile-menu");
+const bigDogImgContainer = document.getElementById("big-dog-img__container");
+
+itemsAmount.addEventListener("click", () =>
+  dropdownOptions.classList.toggle("show")
+);
 
 hambugrer.addEventListener("click", toggleMobileMenu);
 
@@ -28,6 +37,7 @@ const currentSectionObserver = new IntersectionObserver(
 );
 
 const sections = [productFeaturesSection, ingredientsSection, products];
+
 sections.forEach((section) => {
   currentSectionObserver.observe(section);
 });
@@ -35,9 +45,14 @@ fetchDataObserver.observe(products);
 fetchMoreDataObserver.observe(threshold);
 
 let data;
-
 let pageNumber = 1;
-let pageSize = 25;
+let pageSize = +currentPageCount.textContent;
+
+Array.from(dropdownOptionsItems).forEach((item) => {
+  item.addEventListener("click", (e) => {
+    currentPageCount.textContent = e.target.textContent;
+  });
+});
 
 function renderData() {
   data?.forEach(({ text, id }) => {
@@ -72,15 +87,20 @@ async function fetchData(pageNumber, pageSize) {
 }
 
 function fetchDataObserverCallback([{ isIntersecting }]) {
-  if (!data && isIntersecting)
-    fetchData(pageNumber, pageSize).then(() => renderData(data));
+  if (!data && isIntersecting) fetchData(1, 25).then(() => renderData(data));
 }
 
 function fetchMoreDataObserverCallback([{ isIntersecting }]) {
-  if (isIntersecting)
-    fetchData(pageNumber, pageSize)
-      .then(() => renderData(data))
-      .then(() => pageNumber++);
+  if (data && isIntersecting)
+    if (currentPageCount.textContent === "25") {
+      fetchData(++pageNumber, pageSize).then(() => renderData(data));
+    }
+  if (currentPageCount.textContent === "50") {
+    fetchData(++pageNumber, pageSize).then(() => renderData(data));
+  }
+  if (currentPageCount.textContent === "75") {
+    fetchData(++pageNumber, pageSize).then(() => renderData(data));
+  }
 }
 
 function currentSectionObserverCallback(entries) {
@@ -91,10 +111,8 @@ function currentSectionObserverCallback(entries) {
     );
 
     if (isIntersecting) {
-      console.log(`${id} is intersecting`);
       correspondingLink?.classList.add("active");
     } else {
-      console.log(`${id} is not intersecting`);
       correspondingLink?.classList.remove("active");
     }
   });

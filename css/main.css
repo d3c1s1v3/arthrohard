@@ -512,13 +512,13 @@ header .container {
 }
 
 .ingredients--center .slime-left {
-  bottom: 25%;
+  bottom: 50%;
   left: 2%;
   width: 28%;
 }
 
 .ingredients--center .slime-right {
-  top: 25%;
+  top: 20%;
   right: 1%;
   width: 38%;
 }
@@ -529,10 +529,9 @@ header .container {
   background: url("/img/svg/slime-left.svg"), url("/img/svg/slime-left.svg"),
     #fff;
   background-repeat: no-repeat;
-  background-position: 35% 67%, 68% 60%;
+  background-position: 40% 67%, 58% 60%;
   background-attachment: fixed;
-
-  background-size: 16rem;
+  background-size: 18rem;
 }
 
 #big-dog-img__container .slime-left {
@@ -641,6 +640,7 @@ header .container {
   background: #f6f6f6;
   position: relative;
   z-index: 1;
+  padding: 3.2rem;
 }
 #threshold {
   position: absolute;
@@ -650,6 +650,7 @@ header .container {
   left: 0;
   right: 0;
   bottom: 0;
+  background: yellow;
 }
 
 #product--cards__container {
@@ -711,10 +712,13 @@ header .container {
   font-size: 1.6rem;
   padding: 1rem;
   border: 0.2rem solid #ad4844;
+  border-width: 0.2rem 0 0.2rem 0.2rem;
   font-weight: bold;
+  background-color: #fff;
 }
 
 .items-amount {
+  position: relative;
   height: 4.2rem;
   width: 4.2rem;
   display: flex;
@@ -725,6 +729,47 @@ header .container {
   outline: none;
   color: #fff;
   font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.dropdown-options {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  z-index: -1;
+  display: flex;
+  transition: 0.4s ease-in-out;
+}
+
+.dropdown-options.show {
+  transform: translateY(100%);
+}
+
+.dropdown-options span {
+  border: 0.2rem solid #ad4844;
+  color: #111;
+  display: flex;
+  width: 4.2rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-width: 0 0.2rem 0.2rem 0.2rem;
+  transition: 0.2s ease-in-out;
+}
+
+.dropdown-options span:hover {
+  background-color: #ccc;
+}
+
+.dropdown-options span:nth-of-type(2) {
+  border: 0.2rem solid #ad4844;
+  display: flex;
+  width: 4.2rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-width: 0 0 0.2rem 0;
 }
 
 #mobile-menu {
