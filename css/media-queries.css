@@ -9,6 +9,31 @@
   --screen-xxxxl: 1920px;
 }
 
+@media screen and (max-width: 1420px) {
+  .cards__container {
+    flex-wrap: wrap;
+  }
+  .ingredients__card {
+    transform: scale(0.8);
+  }
+  .ingredients--center img:nth-last-of-type(1) {
+    right: 8%;
+    /* transform: scale(0.9); */
+    top: 35%;
+  }
+  .ingredients--center img:nth-last-of-type(2) {
+    width: 70%;
+    height: 100%;
+    object-fit: contain;
+    margin-inline: auto;
+  }
+  .ingredients--center img:nth-last-of-type(3) {
+    transform: scale(0.9);
+    left: 8%;
+    bottom: 40%;
+  }
+}
+
 @media screen and (max-width: 780px) {
   body {
     background: #f1f1f1;

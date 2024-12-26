@@ -50,6 +50,7 @@ let pageSize = +currentPageCount.textContent;
 
 Array.from(dropdownOptionsItems).forEach((item) => {
   item.addEventListener("click", (e) => {
+    fetchData(1, +currentPageCount.textContent);
     currentPageCount.textContent = e.target.textContent;
   });
 });
@@ -80,14 +81,15 @@ async function fetchData(pageNumber, pageSize) {
     );
     const json = await response.json();
     data = json.data;
-    console.log(data);
+    // console.log(data);
   } catch (error) {
     console.log(error);
   }
 }
 
 function fetchDataObserverCallback([{ isIntersecting }]) {
-  if (!data && isIntersecting) fetchData(1, 25).then(() => renderData(data));
+  if (!data && isIntersecting)
+    fetchData(pageNumber, pageSize).then(() => renderData(data));
 }
 
 function fetchMoreDataObserverCallback([{ isIntersecting }]) {
