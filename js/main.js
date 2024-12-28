@@ -2,6 +2,7 @@ const API_URL = "https://brandstestowy.smallhost.pl/api/random";
 
 // SELECTORS
 const links = document.getElementsByClassName("link");
+const mobileLinks = document.getElementsByClassName("mobile-link");
 const products = document.getElementById("products");
 const productFeaturesSection = document.getElementById("product-features");
 const ingredientsSection = document.getElementById("ingredients");
@@ -21,6 +22,10 @@ const pagination = document.getElementById("pagination");
 const hambugrer = document.getElementById("hamburger");
 const mobileMenu = document.getElementById("mobile-menu");
 const bigDogImgContainer = document.getElementById("big-dog-img__container");
+
+Array.from(mobileLinks).forEach((link) => {
+  link.addEventListener("click", toggleMobileMenu);
+});
 
 itemsAmount.addEventListener("click", () =>
   dropdownOptions.classList.toggle("show")
@@ -50,7 +55,6 @@ let pageSize = +currentPageCount.textContent;
 
 Array.from(dropdownOptionsItems).forEach((item) => {
   item.addEventListener("click", (e) => {
-    fetchData(1, +currentPageCount.textContent);
     currentPageCount.textContent = e.target.textContent;
   });
 });

@@ -154,6 +154,11 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* flex: 1; */
+}
+
+.section--hero--top--right__area {
+  flex: 1;
 }
 
 .hero--img {
@@ -175,10 +180,6 @@ header .container {
   z-index: -1;
   bottom: 30%;
   right: 9%;
-}
-
-.section--hero--top--right__area {
-  margin-left: 3rem;
 }
 
 .section--top > div:last-child {
@@ -238,8 +239,8 @@ header .container {
 }
 
 .section--product-features .cards__container {
-  /* height: 60%; */
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 13.6rem;
   margin-inline: auto;
@@ -423,7 +424,8 @@ header .container {
 .grid__box {
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  padding: 2rem;
 }
 
 .ingredients__card {
@@ -493,6 +495,7 @@ header .container {
 .ingredients--center {
   position: relative;
   display: flex;
+  align-items: center;
   flex-direction: column;
   margin-inline: 5rem;
 }
@@ -504,6 +507,7 @@ header .container {
 .ingredients--center > .big-bottle {
   max-height: 90%;
   z-index: 1;
+  transform: scale(0.8);
 }
 
 .slime-left,
@@ -512,15 +516,15 @@ header .container {
 }
 
 .ingredients--center .slime-left {
-  bottom: 50%;
+  bottom: 30%;
   left: 2%;
-  width: 28%;
+  min-width: 28%;
 }
 
 .ingredients--center .slime-right {
-  top: 25%;
-  right: 1%;
-  width: 38%;
+  top: 30%;
+  right: -7%;
+  min-width: 38%;
 }
 
 #big-dog-img__container {
@@ -532,6 +536,8 @@ header .container {
   background-position: 40% 67%, 58% 60%;
   background-attachment: fixed;
   background-size: 18rem;
+  display: flex;
+  justify-content: center;
 }
 
 #big-dog-img__container .slime-left {
@@ -561,7 +567,7 @@ header .container {
 }
 
 #ingredients .ingredients__container {
-  max-width: 1546px;
+  max-width: 154.6rem;
   margin-inline: auto;
   height: 100%;
   display: flex;
@@ -593,6 +599,7 @@ header .container {
   -webkit-box-shadow: 0px 8px 24px -5px rgba(66, 68, 90, 1);
   -moz-box-shadow: 0px 8px 24px -5px rgba(66, 68, 90, 1);
   box-shadow: 0px 8px 24px -5px rgba(66, 68, 90, 1);
+  margin: 2rem;
 }
 
 #close__popup__btn {
@@ -782,7 +789,7 @@ header .container {
 }
 
 #mobile-menu.show {
-  top: 90px;
+  top: 9.3rem;
 }
 
 #mobile-menu > ul {
